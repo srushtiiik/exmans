@@ -1,0 +1,15 @@
+---
+- name: Deploy 
+  hosts: web
+  become: yes
+  tasks:
+    - name: Copy WAR file
+      copy:
+        src: "/var/snap/jenkins/4829/workspace/MavenAnsible-CICD/target/exmans.war"
+        dest: "/opt/tomcat/webapps/exmans.war"
+        remote_src: no
+
+    - name: Restart Tomcat
+      systemd:
+        name: tomcat
+        state: restarted
