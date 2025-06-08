@@ -5,7 +5,7 @@
   tasks:
     - name: Copy WAR file
       copy:
-        src: "/var/snap/jenkins/4874/workspace/MavenAnsible-CICD/target/exmans.war"
+        src: "/var/snap/jenkins/4874/workspace/exmans/target/exmans.war"
         dest: "/opt/tomcat/webapps/exmans.war"
         remote_src: no
 
